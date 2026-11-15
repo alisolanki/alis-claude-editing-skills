@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>orbit-reel-16x9</title><style>
+@font-face{font-family:Inter;src:url(fonts/inter-500-normal.woff2);font-weight:500}
+@font-face{font-family:Inter;src:url(fonts/inter-700-normal.woff2);font-weight:700}
+@font-face{font-family:Inter;src:url(fonts/inter-800-normal.woff2);font-weight:800}
+*{box-sizing:border-box;margin:0}html,body{width:100%;height:100%;overflow:hidden;background:#0c0c10}
+#root{width:100%;height:100%;position:relative;overflow:hidden;font-family:Inter,sans-serif;color:#f6f6f8;-webkit-font-smoothing:antialiased}
+.a{position:absolute}.photo{position:absolute;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.eyebrow{position:absolute;font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;z-index:20}
+.heading{position:absolute;font:800 96px/.95 Inter,sans-serif;letter-spacing:-5px;z-index:15}
+.presenter{position:absolute;z-index:12}.presenter video{width:100%;height:100%;display:block}
+.quiet{position:absolute;text-align:center;font:800 50px/1.08 Inter,sans-serif;color:#fff;letter-spacing:-1.5px;text-shadow:0 2px 4px rgba(0,0,0,.35),0 6px 28px rgba(0,0,0,.45);z-index:25}
+.orbit-card{position:absolute;left:0;top:0;width:180px;height:290px;border:4px solid #ffffff;border-radius:20px;overflow:hidden;background:#ececf1;backface-visibility:visible;box-shadow:0 5px 12px #0003}.orbit-card img{display:block;width:100%;height:100%;object-fit:cover}
+</style></head><body>
+ <div id="root" data-composition-id="main" data-width="1920" data-height="1080" data-duration="4.2" data-fps="30"><div class="a" style="inset:0;z-index:0"><video id="room" src="assets/speaker.mp4" muted playsinline data-start="0" data-duration="4.2" data-media-start="0.04" data-track-index="0" style="width:100%;height:100%"></video></div>
+<div id="camera" class="a" style="inset:0;z-index:2;perspective:1600px;perspective-origin:960px 480px"><div id="orbit-world" class="a" style="inset:0;transform-style:preserve-3d"><div id="subject" style="position:absolute;left:0;top:0;width:1920px;height:1080px;transform:translateZ(0px)"><video id="person" src="assets/speaker_cut.webm" muted playsinline data-start="0" data-duration="4.2" data-media-start="0.04" data-track-index="1" style="width:100%;height:100%"></video></div><div id="orbit-card-0" class="orbit-card"><img src="assets/banana-heels.jpg" alt=""></div><div id="orbit-card-1" class="orbit-card"><img src="assets/blue-stairs.jpg" alt=""></div><div id="orbit-card-2" class="orbit-card"><img src="assets/pixel-burger.jpg" alt=""></div><div id="orbit-card-3" class="orbit-card"><img src="assets/cactus.jpg" alt=""></div><div id="orbit-card-4" class="orbit-card"><img src="assets/pixel-fruit.jpg" alt=""></div><div id="orbit-card-5" class="orbit-card"><img src="assets/red-stairs.jpg" alt=""></div><div id="orbit-card-6" class="orbit-card"><img src="assets/banana-heels.jpg" alt=""></div><div id="orbit-card-7" class="orbit-card"><img src="assets/blue-stairs.jpg" alt=""></div></div></div>
+<div class="a" style="left:460px;top:80px;width:1000px;text-align:center;z-index:6;font:800 64px/1.1 Inter;letter-spacing:-3px;color:#fff;text-shadow:0 2px 6px #0006">Put your ideas<div style="display:block;width:max-content;margin:10px auto 0;background:#5000fa;color:#fff;text-shadow:none;padding:0 18px 8px;border-radius:14px">in motion.</div></div></div>
+ <script src="vendor/gsap.min.js"></script><script>const tl=gsap.timeline({paused:true});
+const cards=[...document.querySelectorAll('.orbit-card')],orb={p:0},CX=960,CY=520,RX=640,RZ=380;
+function place(){cards.forEach((c,i)=>{const a=orb.p*Math.PI*1.1+i/cards.length*Math.PI*2;
+ gsap.set(c,{x:CX+Math.sin(a)*RX-90,y:CY+Math.sin(a*2+i)*36-145,z:Math.cos(a)*RZ,rotationY:-Math.sin(a)*24,rotationZ:Math.sin(a+i)*3});});}
+place();tl.to(orb,{p:1,duration:4.2,ease:'none',onUpdate:place},0);
+ window.__timelines=window.__timelines||{};window.__timelines.main=tl;</script></body></html>

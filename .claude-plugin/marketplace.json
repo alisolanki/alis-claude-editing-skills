@@ -1,0 +1,14 @@
+{
+  "name": "alis-claude-editing-skills",
+  "owner": {
+    "name": "Ali Solanki"
+  },
+  "description": "Ali Solanki's video editing skills for Claude Code.",
+  "plugins": [
+    {
+      "name": "editing-skills",
+      "source": "./",
+      "description": "Twelve local video editing skills: six talking-head workflows, a long-form editor and five photographic styles, for vertical and horizontal video."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "editing-skills",
+  "version": "2.0.0",
+  "description": "Twelve video editing skills for Claude Code by Ali Solanki: short-form reels and full long-form videos, vertical 9:16 and horizontal 16:9, in one minimal house style.",
+  "author": {
+    "name": "Ali Solanki"
+  },
+  "repository": "https://github.com/alisolanki/alis-claude-editing-skills",
+  "license": "MIT",
+  "keywords": ["video", "editing", "talking-head", "reels", "youtube", "long-form", "captions", "hyperframes"]
+}

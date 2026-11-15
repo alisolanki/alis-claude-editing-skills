@@ -1,0 +1,11 @@
+kit/.venv/
+kit/vendor/
+kit/models/
+__pycache__/
+.work/
+*.transcript.json
+.DS_Store
+kit/fonts/.ttf/
+assets/my-media/*
+!assets/my-media/README.md
+.*.moment*.json
